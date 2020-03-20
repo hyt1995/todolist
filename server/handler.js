@@ -7,7 +7,7 @@ let result = {
 const handler = function(req,res){
     const headers = defaultCorsHeaders;
     headers['Content-Type'] = 'application/json';
-    response.writeHead(statusCode, headers);
+    res.writeHead(200, headers);
     if(req.method === 'OPTIONS'){
         res.writeHead(200,headers);
         res.end(data)
@@ -23,13 +23,21 @@ const handler = function(req,res){
             res.end(JSON.stringify(data));
               })
         }else {
-          status = 404;
-          resp.writeHead(status, defaultCorsHeaders);
-          resp.end();
+          res.writeHead(404, defaultCorsHeaders);
+          res.end();
         } 
     }else {
-        resp.writeHead(404, defaultCorsHeaders);
-        resp.end();
+        res.writeHead(404, defaultCorsHeaders);
+        res.end();
       }
-      resp.end('Hello, World!');
+      res.end('Hello, World!');
 }
+
+const defaultCorsHeaders = {
+    'access-control-allow-origin': '*',
+    'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'access-control-allow-headers': 'content-type, accept',
+    'access-control-max-age': 10 // Seconds.
+  };
+
+module.exports = handler;

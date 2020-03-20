@@ -1,0 +1,24 @@
+.mainlist{
+  background: white;
+  width: 512px;
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.title{
+  padding: 2rem;
+  font-size: 3rem;
+  text-align:center;
+  font-weight : 500;
+  background: rgb(138, 136, 136);
+  color:rgb(189, 174, 174);
+}
+
+.form{
+  padding:1rem;
+  border-bottom:1px solid black;
+}
+.children{
+  min-height: 50rem;
+}
